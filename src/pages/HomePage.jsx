@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import ShowsList from '../components/ShowsList'
 
 const HomePage = () => {
   const [shows, setShows] = useState([])
@@ -16,7 +17,23 @@ const HomePage = () => {
   }, [])
   return (
     <>
-      <h1>Top Rated TV Shows</h1>
+      <header>
+        <h1>Top Rated TV Shows</h1>
+      </header>
+      <main>
+        <ul>
+          {shows.map((show) => {
+            return (
+              <ShowsList
+                key={show.id}
+                title={show.name}
+                description={show.overview}
+                pic={show.poster_path}
+              />
+            )
+          })}
+        </ul>
+      </main>
     </>
   )
 }
