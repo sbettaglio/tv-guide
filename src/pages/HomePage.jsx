@@ -34,6 +34,7 @@ const HomePage = () => {
           <h3>Today's Random Show</h3>
 
           <ShowsList
+            showId={randomShows.id}
             key={randomShows.id}
             title={randomShows.name}
             description={randomShows.overview}
@@ -46,6 +47,7 @@ const HomePage = () => {
           {shows.map((show) => {
             return (
               <ShowsList
+                showId={show.id}
                 key={show.id}
                 title={show.name}
                 description={show.overview}
