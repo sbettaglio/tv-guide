@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ShowsList from '../components/ShowsList'
-import RandomShow from '../components/RandomShow'
 
 const HomePage = () => {
   const [shows, setShows] = useState([])
@@ -34,14 +33,16 @@ const HomePage = () => {
         <section>
           <h3>Today's Random Show</h3>
 
-          <RandomShow
+          <ShowsList
             key={randomShows.id}
             title={randomShows.name}
             description={randomShows.overview}
             pic={randomShows.poster_path}
           />
         </section>
+
         <ul>
+          <h3>Top Rated Shows List</h3>
           {shows.map((show) => {
             return (
               <ShowsList
