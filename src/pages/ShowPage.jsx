@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import CastList from '../components/CastList'
 const ShowPage = (props) => {
   let showId = props.match.params.showId
   showId = showId.substring(1)
@@ -17,13 +17,13 @@ const ShowPage = (props) => {
       `https://api.themoviedb.org/3/tv/${showId}/credits?api_key=e02fcd07e30880bdc4771c0d0564e80e&language=en-US`
     )
     setShowInfo(showResponse.data)
-    console.log(castResponse.data)
-    setCastInfo(castResponse.data)
+    // console.log(castResponse.data.cast)
+    setCastInfo(castResponse.data.cast)
   }
   useEffect(() => {
     getShowInfo()
   }, [])
-
+  console.log(castInfo)
   return (
     <>
       <header>
@@ -48,8 +48,30 @@ const ShowPage = (props) => {
               <span>Show status:</span> {showInfo.status}
             </li>
             <li>
-              {/* <span>Created by:</span> {castInfo.created_by.0.name} */}
+              <span>Last Episode Aired:</span> {showInfo.last_air_date}
             </li>
+            <li>
+              <span>Popularity:</span> {showInfo.popularity}
+            </li>
+
+            <li>
+              <span>Origin Country:</span> {showInfo.origin_country}
+            </li>
+          </ul>
+        </section>
+        <section className="cast-details">
+          <ul>
+            <h3>Cast</h3>
+            {castInfo.map((cast) => {
+              return (
+                <CastList
+                  key={cast.id}
+                  character={cast.character}
+                  name={cast.name}
+                  pic={cast.profile_path}
+                />
+              )
+            })}
           </ul>
         </section>
       </main>
