@@ -12,14 +12,14 @@ const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Go Home</Link>
+              <Link to="/">🏠</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/1">Page 1</Link>
             </li>
             <li>
               <Link to="/2">Page 2</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </header>

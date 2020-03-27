@@ -27,10 +27,8 @@ const ShowPage = (props) => {
   console.log(castInfo)
   return (
     <>
-      <header>
-        <h1>{showInfo.name}</h1>
-      </header>
       <main>
+        <h1>{showInfo.name}</h1>
         <section className="show-details">
           <img
             src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${showInfo.poster_path}`}

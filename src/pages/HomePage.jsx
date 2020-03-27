@@ -26,11 +26,9 @@ const HomePage = () => {
 
   return (
     <>
-      <header>
-        <h1>Top Rated TV Shows</h1>
-      </header>
       <main>
-        <section>
+        <h1>Top Rated TV Shows</h1>
+        <section className="random-show home-list">
           <h3>Today's Random Show</h3>
 
           <ShowsList
@@ -42,7 +40,7 @@ const HomePage = () => {
           />
         </section>
 
-        <ul>
+        <ul className="home-list">
           <h3>Top Rated Shows List</h3>
           {shows.map((show) => {
             return (
