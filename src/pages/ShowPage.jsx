@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import CastList from '../components/CastList'
+import ShowInfoList from '../components/ShowInfoList'
 const ShowPage = (props) => {
   let showId = props.match.params.showId
   showId = showId.substring(1)
@@ -35,28 +36,16 @@ const ShowPage = (props) => {
             src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${showInfo.poster_path}`}
           />
           <ul>
-            <li>
-              <span>First Aired:</span> {showInfo.first_air_date}
-            </li>
-            <li>
-              <span>Number of Seasons:</span> {showInfo.number_of_seasons}
-            </li>
-            <li>
-              <span>Number of Episodes:</span> {showInfo.number_of_episodes}
-            </li>
-            <li>
-              <span>Show status:</span> {showInfo.status}
-            </li>
-            <li>
-              <span>Last Episode Aired:</span> {showInfo.last_air_date}
-            </li>
-            <li>
-              <span>Popularity:</span> {showInfo.popularity}
-            </li>
-
-            <li>
-              <span>Origin Country:</span> {showInfo.origin_country}
-            </li>
+            <ShowInfoList
+              key={showInfo.id}
+              firstAired={showInfo.first_air_date}
+              numberOfSeason={showInfo.number_of_seasons}
+              numberOfEpisodes={showInfo.number_of_episodes}
+              showStatus={showInfo.status}
+              lastAired={showInfo.last_air_date}
+              popularity={showInfo.popularity}
+              originCountry={showInfo.origin_country}
+            />
           </ul>
         </section>
         <section className="cast-details">
