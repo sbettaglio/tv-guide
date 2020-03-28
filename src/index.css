@@ -109,6 +109,17 @@ h4 {
 span {
   font-weight: bolder;
 }
+.actor-info {
+  display: grid;
+  grid-template-columns: 100%;
+}
+.pic-container {
+  text-align: center;
+}
+.actor-info ul li {
+  padding: 1rem;
+  line-height: 1.2rem;
+}
 @media (min-width: 768px) {
   .random-show li {
     display: grid;

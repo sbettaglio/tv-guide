@@ -55,6 +55,7 @@ const ShowPage = (props) => {
             {castInfo.map((cast) => {
               return (
                 <CastList
+                  actorId={cast.id}
                   key={cast.id}
                   character={cast.character}
                   name={cast.name}
