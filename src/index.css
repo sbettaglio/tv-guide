@@ -160,6 +160,19 @@ span {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
   }
+  .show-details {
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+  .show-details ul {
+    padding-left: 2rem;
+    display: flex;
+    flex-flow: wrap;
+  }
+  .show-details ul li {
+    padding: 1rem 0.5rem;
+    text-align: justify;
+  }
   .cast-details ul {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
