@@ -30,6 +30,11 @@ header ul li {
   border-radius: 30px;
   margin: 0.5rem;
 }
+.home-list li p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 25ch;
+}
 .random-show li {
   list-style-type: none;
   border: 3px solid #393e46;
@@ -127,6 +132,9 @@ span {
     grid-column: 2/4;
     grid-row: 2/4;
     line-height: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 20ch;
   }
   .home-list {
     display: grid;
@@ -141,8 +149,19 @@ span {
   .cast-details ul {
     display: grid;
     grid-template-columns: 50% 50%;
+    width: 100%;
   }
   .cast-details ul li {
-    margin: 1rem 2rem;
+    margin: 2rem;
+  }
+}
+@media (min-width: 1000px) {
+  .home-list {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  .cast-details ul {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
   }
 }
