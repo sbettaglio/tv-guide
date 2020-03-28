@@ -55,6 +55,9 @@ ul {
   margin-left: 0;
   padding-left: 0;
 }
+li {
+  list-style: none;
+}
 
 h4 {
   text-align: center;
@@ -64,4 +67,35 @@ h4 {
   text-align: justify;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.show-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  line-height: 1.5rem;
+  border: 3px solid #393e46;
+  border-radius: 30px;
+  margin: 2rem;
+  padding-top: 1rem;
+}
+
+.cast-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cast-details ul li {
+  border: 3px solid #393e46;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+}
+
+span {
+  font-weight: bolder;
 }

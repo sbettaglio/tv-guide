@@ -2,7 +2,7 @@ import React from 'react'
 
 const ShowInfoList = ({
   firstAired,
-  numberOfSeasons,
+  numberOfSeason,
   numberOfEpisodes,
   showStatus,
   lastAired,
@@ -15,7 +15,7 @@ const ShowInfoList = ({
         <span>First Aired:</span> {firstAired}
       </li>
       <li>
-        <span>Number of Seasons:</span> {numberOfSeasons}
+        <span>Number of Seasons:</span> {numberOfSeason}
       </li>
       <li>
         <span>Number of Episodes:</span> {numberOfEpisodes}

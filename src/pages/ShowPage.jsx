@@ -30,9 +30,11 @@ const ShowPage = (props) => {
       <main>
         <h1>{showInfo.name}</h1>
         <section className="show-details">
-          <img
-            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${showInfo.poster_path}`}
-          />
+          <aside>
+            <img
+              src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${showInfo.poster_path}`}
+            />
+          </aside>
           <ul>
             <ShowInfoList
               key={showInfo.id}
