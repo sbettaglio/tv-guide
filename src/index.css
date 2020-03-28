@@ -133,7 +133,16 @@ span {
     grid-template-columns: 50% 50%;
   }
   .show-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+  }
+  .cast-details ul {
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+  }
+  .cast-details ul li {
+    margin: 1rem 2rem;
   }
 }

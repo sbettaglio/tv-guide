@@ -49,8 +49,8 @@ const ShowPage = (props) => {
           </ul>
         </section>
         <section className="cast-details">
+          <h3>Cast</h3>
           <ul>
-            <h3>Cast</h3>
             {castInfo.map((cast) => {
               return (
                 <CastList
