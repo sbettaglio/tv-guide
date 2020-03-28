@@ -12,7 +12,7 @@ const ShowInfoList = ({
   return (
     <>
       <li>
-        <span>First Aired:</span> {firstAired}
+        <span>First Aired:</span> {new Date(firstAired).toDateString()}
       </li>
       <li>
         <span>Number of Seasons:</span> {numberOfSeason}
@@ -24,7 +24,7 @@ const ShowInfoList = ({
         <span>Show status:</span> {showStatus}
       </li>
       <li>
-        <span>Last Episode Aired:</span> {lastAired}
+        <span>Last Episode Aired:</span> {new Date(lastAired).toDateString()}
       </li>
       <li>
         <span>Popularity:</span> {popularity}
