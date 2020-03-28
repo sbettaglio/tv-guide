@@ -39,7 +39,7 @@ const HomePage = () => {
           />
         </section>
 
-        <h3>Top Rated Shows List</h3>
+        <h3>Top Rated Shows</h3>
         <ul className="home-list">
           {shows.map((show) => {
             return (
