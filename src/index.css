@@ -30,7 +30,12 @@ header ul li {
   border-radius: 30px;
   margin: 0.5rem;
 }
-
+.random-show li {
+  list-style-type: none;
+  border: 3px solid #393e46;
+  border-radius: 30px;
+  margin: 0.5rem;
+}
 main {
   padding-top: 3rem;
 }
@@ -98,4 +103,37 @@ h4 {
 
 span {
   font-weight: bolder;
+}
+@media (min-width: 768px) {
+  .random-show li {
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: center;
+  }
+  .random-show li h4 {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    margin-top: 4rem;
+    text-align: justify;
+    font-size: larger;
+  }
+  .random-show li a {
+    grid-row: 1/4;
+  }
+  .random-show li p {
+    grid-column: 2/4;
+    grid-row: 2/4;
+    line-height: 1.4rem;
+  }
+  .home-list {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .show-details {
+    display: grid;
+    grid-template-rows: 50% 50%;
+  }
 }

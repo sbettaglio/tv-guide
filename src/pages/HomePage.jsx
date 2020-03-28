@@ -28,9 +28,8 @@ const HomePage = () => {
     <>
       <main>
         <h1>Top Rated TV Shows</h1>
-        <section className="random-show home-list">
-          <h3>Today's Random Show</h3>
-
+        <h3>Today's Random Show</h3>
+        <section className="random-show ">
           <ShowsList
             showId={randomShows.id}
             key={randomShows.id}
@@ -40,8 +39,8 @@ const HomePage = () => {
           />
         </section>
 
+        <h3>Top Rated Shows List</h3>
         <ul className="home-list">
-          <h3>Top Rated Shows List</h3>
           {shows.map((show) => {
             return (
               <ShowsList
