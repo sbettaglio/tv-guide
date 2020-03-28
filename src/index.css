@@ -115,11 +115,16 @@ span {
 }
 .pic-container {
   text-align: center;
+  margin-bottom: 3rem;
 }
 .actor-info ul li {
   padding: 1rem;
   line-height: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 28ch;
 }
+
 @media (min-width: 768px) {
   .random-show li {
     display: grid;
@@ -165,6 +170,9 @@ span {
   .cast-details ul li {
     margin: 2rem;
   }
+  .actor-stat {
+    text-align: center;
+  }
 }
 @media (min-width: 1000px) {
   .home-list {
@@ -187,5 +195,27 @@ span {
   .cast-details ul {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+  }
+  .actor-grid {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  .pic-container {
+    grid-row: 1/6;
+  }
+  .birth-date {
+    grid-row: 1/2;
+    grid-column: 2/5;
+    text-align: left;
+  }
+  .birth-place {
+    grid-row: 2/3;
+    grid-column: 2/5;
+    text-align: left;
+  }
+  .biography {
+    grid-column: 2/6;
+    grid-row: 3/6;
   }
 }

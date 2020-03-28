@@ -21,20 +21,20 @@ const ActorPage = (props) => {
       <main>
         <section className="actor-info">
           <h1>{actorInfo.name}</h1>
-          <div className="pic-container">
-            <img
-              src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${actorInfo.profile_path}`}
-              alt={`${actorInfo.name} head-shot `}
-            />
-          </div>
-          <ul>
-            <li>
+          <ul className="actor-grid">
+            <li className="pic-container">
+              <img
+                src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${actorInfo.profile_path}`}
+                alt={`${actorInfo.name} head-shot `}
+              />
+            </li>
+            <li className="actor-stat birth-date">
               <span>Date of Birth:</span> {actorInfo.birthday}
             </li>
-            <li>
+            <li className="actor-stat birth-place">
               <span>Place of Birth:</span> {actorInfo.place_of_birth}
             </li>
-            <li>
+            <li className="biography">
               <span>Biography:</span> {actorInfo.biography}
             </li>
           </ul>
