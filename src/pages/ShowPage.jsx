@@ -74,7 +74,6 @@ const ShowPage = (props) => {
             />
           </ul>
           <form onSubmit={sendRatingToApi}>
-            <h3>{}</h3>
             <label for="rating">Rate Show</label>
 
             <input

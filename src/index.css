@@ -186,6 +186,14 @@ form label {
   .actor-stat {
     text-align: center;
   }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .submit {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
 }
 @media (min-width: 1000px) {
   .home-list {
@@ -230,5 +238,9 @@ form label {
   .biography {
     grid-column: 2/6;
     grid-row: 3/6;
+  }
+  form {
+    padding-right: 3rem;
+    width: 32%;
   }
 }
