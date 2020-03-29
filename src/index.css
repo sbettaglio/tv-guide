@@ -124,6 +124,19 @@ span {
   text-overflow: ellipsis;
   max-height: 28ch;
 }
+form {
+  padding-top: 0;
+  padding-bottom: 1rem;
+  margin-top: 0;
+}
+form label {
+  justify-content: center;
+  padding-right: 0.5rem;
+}
+.submit {
+  margin-left: 0.5rem;
+  background-color: #eeeeee;
+}
 
 @media (min-width: 768px) {
   .random-show li {

@@ -76,7 +76,7 @@ const ShowPage = (props) => {
           <form onSubmit={sendRatingToApi}>
             <h3>{}</h3>
             <label for="rating">Rate Show</label>
-            <br></br>
+
             <input
               type="number"
               max="10.0"
@@ -84,8 +84,7 @@ const ShowPage = (props) => {
               name="value"
               onChange={handleInputChange}
             ></input>
-            <br></br>
-            <input type="submit" />
+            <input className="submit" type="submit" />
           </form>
         </section>
         <section className="cast-details">
