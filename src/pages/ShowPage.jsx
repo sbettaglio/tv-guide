@@ -8,7 +8,9 @@ const ShowPage = (props) => {
   showId = showId.substring(1)
   const [showInfo, setShowInfo] = useState([])
   const [castInfo, setCastInfo] = useState([])
-  const [rating, setRating] = useState(0)
+  const [rating, setRating] = useState({
+    value: 0,
+  })
 
   const getShowInfo = async () => {
     const showResponse = await axios.get(
@@ -27,14 +29,14 @@ const ShowPage = (props) => {
   }, [])
   const handleInputChange = (e) => {
     const value = e.target.value
-    // console.log(value)
+    console.log(value)
     setRating(value)
   }
   console.log(rating)
   const sendRatingToApi = async (e) => {
     e.preventDefault()
-    const resp = await axios.put(
-      `https://api.themoviedb.org/3/tv/${showId}/${rating}?api_key=e02fcd07e30880bdc4771c0d0564e80e`
+    const resp = await axios.post(
+      `https://api.themoviedb.org/3/tv/${showId}/rating?api_key=e02fcd07e30880bdc4771c0d0564e80e&guest_session_id=72c6b504ee4b492fee9849920b3c9e4f`
     )
     console.log(resp)
   }
