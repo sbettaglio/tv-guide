@@ -46,6 +46,9 @@ const ShowPage = (props) => {
       rating
     )
     console.log(resp)
+    if (resp.status === 201) {
+      alert('Vote has been cast')
+    }
   }
   return (
     <>
@@ -71,6 +74,7 @@ const ShowPage = (props) => {
             />
           </ul>
           <form onSubmit={sendRatingToApi}>
+            <h3>{}</h3>
             <label for="rating">Rate Show</label>
             <br></br>
             <input
