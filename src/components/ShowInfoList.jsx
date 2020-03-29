@@ -8,6 +8,7 @@ const ShowInfoList = ({
   lastAired,
   popularity,
   originCountry,
+  rating,
 }) => {
   return (
     <>
@@ -32,6 +33,9 @@ const ShowInfoList = ({
 
       <li>
         <span>Origin Country:</span> {originCountry}
+      </li>
+      <li>
+        <span>Current Rating:</span> {rating}
       </li>
     </>
   )

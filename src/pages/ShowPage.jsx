@@ -8,7 +8,7 @@ const ShowPage = (props) => {
   showId = showId.substring(1)
   const [showInfo, setShowInfo] = useState([])
   const [castInfo, setCastInfo] = useState([])
-  // const [castInfo, setCastInfo] = useState([])
+  const [rating, setRating] = useState(0)
 
   const getShowInfo = async () => {
     const showResponse = await axios.get(
@@ -25,7 +25,19 @@ const ShowPage = (props) => {
   useEffect(() => {
     getShowInfo()
   }, [])
-  console.log(castInfo)
+  const handleInputChange = (e) => {
+    const value = e.target.value
+    // console.log(value)
+    setRating(value)
+  }
+  console.log(rating)
+  const sendRatingToApi = async (e) => {
+    e.preventDefault()
+    const resp = await axios.put(
+      `https://api.themoviedb.org/3/tv/${showId}/${rating}?api_key=e02fcd07e30880bdc4771c0d0564e80e`
+    )
+    console.log(resp)
+  }
   return (
     <>
       <main>
@@ -46,8 +58,21 @@ const ShowPage = (props) => {
               lastAired={showInfo.last_air_date}
               popularity={showInfo.popularity}
               originCountry={showInfo.origin_country}
+              rating={showInfo.vote_average}
             />
           </ul>
+          <form onSubmit={sendRatingToApi}>
+            <label for="rating">Rate Show</label>
+            <br></br>
+            <input
+              type="number"
+              max="10.0"
+              min="0"
+              onChange={handleInputChange}
+            ></input>
+            <br></br>
+            <input type="submit" />
+          </form>
         </section>
         <section className="cast-details">
           <h3>Cast</h3>
