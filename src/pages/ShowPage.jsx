@@ -28,15 +28,22 @@ const ShowPage = (props) => {
     getShowInfo()
   }, [])
   const handleInputChange = (e) => {
-    const value = e.target.value
-    console.log(value)
-    setRating(value)
+    const fieldToUpdate = e.target.name
+    const val = e.target.value
+    console.log(val)
+    setRating((prevValue) => {
+      console.log('before the update', prevValue)
+      prevValue[fieldToUpdate] = val
+      console.log('after', prevValue)
+      return prevValue
+    })
   }
   console.log(rating)
   const sendRatingToApi = async (e) => {
     e.preventDefault()
     const resp = await axios.post(
-      `https://api.themoviedb.org/3/tv/${showId}/rating?api_key=e02fcd07e30880bdc4771c0d0564e80e&guest_session_id=72c6b504ee4b492fee9849920b3c9e4f`
+      `https://api.themoviedb.org/3/tv/${showId}/rating?api_key=e02fcd07e30880bdc4771c0d0564e80e&guest_session_id=72c6b504ee4b492fee9849920b3c9e4f`,
+      rating
     )
     console.log(resp)
   }
@@ -70,6 +77,7 @@ const ShowPage = (props) => {
               type="number"
               max="10.0"
               min="0"
+              name="value"
               onChange={handleInputChange}
             ></input>
             <br></br>
